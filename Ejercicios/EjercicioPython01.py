@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-datos = pd.read_csv("./ElementosBasicoEstadistica/housing.csv")
+datos = pd.read_csv("Ejercicios/housing.csv")
 
 columnas = ["median_house_value", "total_bedrooms", "population"]
 estadisticas = {}
