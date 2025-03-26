@@ -67,14 +67,14 @@ utilidad_sucursal = ((ventas_sucursal - deuda_sucursal) / ventas_sucursal)
 sucursales = deuda_sucursal.index
 x = np.arange(len(sucursales))
 ancho = 0.35
-
-fig, ax1 = plt.subplots(figsize=(10,6))
-ax1.bar(x - ancho/2, deuda_sucursal, ancho, label="Deuda Total")
+fig, ax1 = plt.subplots(figsize=(10, 6))
+ax1.bar(x - ancho/2, deuda_sucursal, ancho, label="Deuda Total", color="blue")
 ax1.set_ylabel("Deuda Total")
 ax2 = ax1.twinx()
-ax2.bar(x + ancho/2, utilidad_sucursal, ancho, label="Utilidad", color="red")
+ax2.bar(x + ancho/2, utilidad_sucursal, ancho, label="Margen de Utilidad", color="red")
 ax2.set_ylabel("Margen de Utilidad")
-
 plt.title("Deuda Total y Margen de Utilidad por Sucursal")
-fig.legend(loc="upper right", bbox_to_anchor=(1,1), bbox_transform=ax1.transAxes)
+fig.legend(loc="upper right", bbox_to_anchor=(1, 1), bbox_transform=ax1.transAxes)
+plt.xticks(x, sucursales, rotation=45)
+plt.tight_layout()
 plt.show()
